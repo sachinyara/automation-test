@@ -25,7 +25,7 @@ public class TestEditScreen extends CommonSteps {
 
 	@Features(value = { "Shopping bag" })
     @Stories(value = { "Edit Screen" })
-	@Test(description = "Do First Time Login")
+	@Test(description = "Do First Time Login", enabled = false)
 	public void doFirstTimeLogin() {
 		IChooseLanguagePage chooselanguagepage = getFactory().getIChooseLanguagePage();
 		ILoginPage loginpage = getFactory().getILoginPage();
@@ -48,7 +48,7 @@ public class TestEditScreen extends CommonSteps {
 
 	@Features(value = { "Shopping bag" })
     @Stories(value = { "Edit Screen" })
-	@Test(description = "Validate Edit Screen For 1 Item in Cart", enabled = false)
+	@Test(description = "Validate Edit Screen For 1 Item in Cart")
 	public void validateEditScreenForOneItemInCart() {
 		IChooseLanguagePage chooselanguagepage = getFactory().getIChooseLanguagePage();
 		ILoginPage loginpage = getFactory().getILoginPage();
@@ -57,7 +57,7 @@ public class TestEditScreen extends CommonSteps {
 
 		chooselanguagepage.clickOnLanguageToBeChoosen("English");
 		chooselanguagepage.clickOnContinueButton();
-		loginpage.doFirstTimeLogin("8197607711", "Rinki427");
+		loginpage.clickOnDoItLaterButton();
 		homepage.waitForPageToLoad();
 		homepage.clickOnHamburger();
 		homepage.clickOnCategoryToBeChoosen("Mobile");
@@ -79,7 +79,7 @@ public class TestEditScreen extends CommonSteps {
 
 	@Features(value = { "Shopping bag" })
     @Stories(value = { "Edit Screen" })
-	@Test(description = "Validate Edit Screen For More Items in Cart", enabled = false)
+	@Test(description = "Validate Edit Screen For More Items in Cart")
 	public void validateEditScreenForMoreItemsInCart() {
 		IChooseLanguagePage chooselanguagepage = getFactory().getIChooseLanguagePage();
 		ILoginPage loginpage = getFactory().getILoginPage();
@@ -88,7 +88,7 @@ public class TestEditScreen extends CommonSteps {
 
 		chooselanguagepage.clickOnLanguageToBeChoosen("English");
 		chooselanguagepage.clickOnContinueButton();
-		loginpage.doFirstTimeLogin("8197607711", "Rinki427");
+		loginpage.clickOnDoItLaterButton();
 		homepage.waitForPageToLoad();
 		homepage.clickOnHamburger();
 
