@@ -1,7 +1,5 @@
 package scenarios;
 
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 import static pages.MobilePageFactory.getFactory;
 

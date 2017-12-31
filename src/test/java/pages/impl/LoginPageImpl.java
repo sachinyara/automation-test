@@ -6,7 +6,6 @@ import common.CommonSteps;
 import io.appium.java_client.android.AndroidKeyCode;
 import pages.ILoginPage;
 import ru.yandex.qatools.allure.annotations.Step;
-import scenarios.AndroidSetup;
 
 public class LoginPageImpl extends CommonSteps implements ILoginPage{
 

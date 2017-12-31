@@ -18,12 +18,12 @@ public class AndroidSetup {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
 
-		// mandatory capabilities
+		// Mandatory capabilities
 		capabilities.setCapability("deviceName", "emulator-5554");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "5.1.1");
 
-		// other caps
+		// Other caps
 		capabilities.setCapability("appPackage", "net.one97.paytm");
 		capabilities.setCapability("appActivity", "net.one97.paytm.landingpage.activity.AJRMainActivity");
 

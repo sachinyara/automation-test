@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 
 import common.CommonSteps;
 import pages.IShoppingBagPage;
-import scenarios.AndroidSetup;
 
 public class ShoppingBagPageImpl extends CommonSteps implements IShoppingBagPage {
 

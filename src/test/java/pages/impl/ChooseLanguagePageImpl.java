@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 
 import common.CommonSteps;
 import pages.IChooseLanguagePage;
-import scenarios.AndroidSetup;
 
 public class ChooseLanguagePageImpl extends CommonSteps implements IChooseLanguagePage{
 

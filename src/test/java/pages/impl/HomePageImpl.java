@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 
 import common.CommonSteps;
 import pages.IHomePage;
-import scenarios.AndroidSetup;
 
 public class HomePageImpl extends CommonSteps implements IHomePage{
 
