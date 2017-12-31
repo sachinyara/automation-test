@@ -5,7 +5,8 @@ import static pages.MobilePageFactory.getFactory;
 
 import java.net.MalformedURLException;
 
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import common.CommonSteps;
@@ -18,7 +19,7 @@ import ru.yandex.qatools.allure.annotations.Stories;
 
 public class TestEditScreen extends CommonSteps {
 
-	@BeforeSuite
+	@BeforeMethod
 	public void androidDeviceSetup() throws MalformedURLException {
 		prepareAndroidForAppium();
 	}
@@ -64,7 +65,7 @@ public class TestEditScreen extends CommonSteps {
 		homepage.clickOnItemType1ToBeChoosen("Mobiles");
 		homepage.clickOnItemType2ToBeChoosen("Smartphones");
 		waitForPageToLoad();
-		homepage.clickOnItemToBeAddedInBag("Vivo");
+		homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
 		waitForPageToLoad();
 		homepage.clickOnAddToBagButton();
 		waitForPageToLoad();
@@ -96,16 +97,18 @@ public class TestEditScreen extends CommonSteps {
 		homepage.clickOnItemType1ToBeChoosen("Mobiles");
 		homepage.clickOnItemType2ToBeChoosen("Smartphones");
 		waitForPageToLoad();
-		homepage.clickOnItemToBeAddedInBag("Gionee");
+		homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
+		
 		waitForPageToLoad();
 		homepage.clickOnAddToBagButton();
 		waitForPageToLoad();
 
 		shoppingbagpage.clickOnShoppingBagBackButton();
 		shoppingbagpage.clickOnShoppingBagBackButton();
-		homepage.clickOnItemToBeAddedInBag("Samsung");
+		homepage.clickOnItemToBeAddedInBag("Apple iPhone SE");
 		homepage.clickOnAddToBagButton();
-
+		waitForPageToLoad();
+		homepage.clickOnSizeOfItem("SILVER");
 		shoppingbagpage.clickOnShoppingBagEditButton();
 		shoppingbagpage.validateDefaultCheckboxSelectionForMoreItemsInBag();
 		shoppingbagpage.checkAllCheckboxesInEditBag();
@@ -113,5 +116,10 @@ public class TestEditScreen extends CommonSteps {
 		waitForPageToLoad();
 		assertTrue(shoppingbagpage.getEmptyShoppingBagMessage().isDisplayed(),
 				"Empty Shopping Bag message is not displayed");
+	}
+	
+	@AfterMethod
+	public void closeAppiumApp(){
+		closeApp();
 	}
 }

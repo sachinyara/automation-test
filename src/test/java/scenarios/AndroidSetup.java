@@ -33,4 +33,8 @@ public class AndroidSetup {
 		System.setProperty("webdriver.chrome.driver", "C:\\pathto\\my\\chromedriver.exe");
 		driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 	}
+	
+	protected void closeApp(){
+		driver.quit();
+	}
 }
