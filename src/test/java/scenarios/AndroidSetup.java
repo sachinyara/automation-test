@@ -2,21 +2,16 @@ package scenarios;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class AndroidSetup {
 
-	protected static AndroidDriver driver;
+	protected static AndroidDriver<WebElement> driver;
 
 	protected void prepareAndroidForAppium() throws MalformedURLException {
 
@@ -36,6 +31,6 @@ public class AndroidSetup {
 		capabilities.setCapability("resetKeyboard", "true");
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\pathto\\my\\chromedriver.exe");
-		driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 	}
 }
