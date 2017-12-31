@@ -52,6 +52,12 @@ public class CommonSteps extends AndroidSetup {
 		}
 	}
 	
+	/*protected static boolean isElementPresent(Interf interface,String funName,String parameter){
+		try{
+			interface.funName(parameter);
+		}
+	}*/
+	
 	protected WebElement findElement(String elementXPath) {
 		return driver.findElement(By.xpath(elementXPath));
 	}
