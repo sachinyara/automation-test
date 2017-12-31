@@ -5,17 +5,20 @@ import static pages.MobilePageFactory.getFactory;
 
 import java.net.MalformedURLException;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import common.CommonSteps;
+import common.TakeScreenshot;
 import pages.IChooseLanguagePage;
 import pages.IHomePage;
 import pages.ILoginPage;
 import pages.IShoppingBagPage;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
+
+@Listeners({ TakeScreenshot.class })
 
 public class TestEditScreen extends CommonSteps {
 
@@ -24,7 +27,7 @@ public class TestEditScreen extends CommonSteps {
 		prepareAndroidForAppium();
 	}
 
-	@Features(value = { "Shopping bag" })
+	/*@Features(value = { "Shopping bag" })
 	@Stories(value = { "Edit Screen" })
 	@Test(description = "Do First Time Login", enabled = false)
 	public void doFirstTimeLogin() {
@@ -45,11 +48,11 @@ public class TestEditScreen extends CommonSteps {
 		waitForPageToLoad();
 		assertTrueAllure(homepage.getHamburgerIcon().isDisplayed(), "Home page is displayed",
 				"Home page is not displayed");
-	}
+	}*/
 
 	@Features(value = { "Shopping bag" })
 	@Stories(value = { "Edit Screen" })
-	@Test(description = "Validate Edit Screen For 1 Item in Cart", enabled=false)
+	@Test(description = "Validate Edit Screen For 1 Item in Cart")
 	public void validateEditScreenForOneItemInCart() {
 		IChooseLanguagePage chooselanguagepage = getFactory().getIChooseLanguagePage();
 		ILoginPage loginpage = getFactory().getILoginPage();
@@ -70,26 +73,26 @@ public class TestEditScreen extends CommonSteps {
 		homepage.clickOnHamburger();
 
 		log("Click on Category to be choosen");
-		try{
-		if (homepage.getCategoryToBeChoosen("Electronics").isDisplayed()) {
-			homepage.clickOnCategoryToBeChoosen("Electronics");
-			homepage.clickOnItemType1ToBeChoosen("Televisions");
-			homepage.clickOnItemType2ToBeChoosen("32");
+		try {
+			if (homepage.getCategoryToBeChoosen("Electronics").isDisplayed()) {
+				homepage.clickOnCategoryToBeChoosen("Electronics");
+				homepage.clickOnItemType1ToBeChoosen("Televisions");
+				homepage.clickOnItemType2ToBeChoosen("32");
 
-			log("Click on Item to be added in bag");
-			waitForPageToLoad();
-			homepage.clickOnItemToBeAddedInBag("HDX900S");
-		} else {
-			homepage.clickOnCategoryToBeChoosen("Mobile");
-			homepage.clickOnItemType1ToBeChoosen("Mobiles");
-			homepage.clickOnItemType2ToBeChoosen("Smartphones");
+				log("Click on Item to be added in bag");
+				waitForPageToLoad();
+				homepage.clickOnItemToBeAddedInBag("HDX900S");
+			} else {
+				homepage.clickOnCategoryToBeChoosen("Mobile");
+				homepage.clickOnItemType1ToBeChoosen("Mobiles");
+				homepage.clickOnItemType2ToBeChoosen("Smartphones");
 
-			log("Click on Item to be added in bag");
-			waitForPageToLoad();
-			homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
-		}
+				log("Click on Item to be added in bag");
+				waitForPageToLoad();
+				homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
+			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-	    }
+		}
 
 		log("Click on Add to bag button");
 		waitForPageToLoad();
@@ -132,26 +135,26 @@ public class TestEditScreen extends CommonSteps {
 		homepage.clickOnHamburger();
 
 		log("Click on Category to be choosen");
-		try{
-		if (homepage.getCategoryToBeChoosen("Electronics").isDisplayed()) {
-			homepage.clickOnCategoryToBeChoosen("Electronics");
-			homepage.clickOnItemType1ToBeChoosen("Televisions");
-			homepage.clickOnItemType2ToBeChoosen("32");
+		try {
+			if (homepage.getCategoryToBeChoosen("Electronics").isDisplayed()) {
+				homepage.clickOnCategoryToBeChoosen("Electronics");
+				homepage.clickOnItemType1ToBeChoosen("Televisions");
+				homepage.clickOnItemType2ToBeChoosen("32");
 
-			log("Click on Item to be added in bag");
-			waitForPageToLoad();
-			homepage.clickOnItemToBeAddedInBag("HDX900S");
-		} else {
-			homepage.clickOnCategoryToBeChoosen("Mobile");
-			homepage.clickOnItemType1ToBeChoosen("Mobiles");
-			homepage.clickOnItemType2ToBeChoosen("Smartphones");
+				log("Click on Item to be added in bag");
+				waitForPageToLoad();
+				homepage.clickOnItemToBeAddedInBag("HDX900S");
+			} else {
+				homepage.clickOnCategoryToBeChoosen("Mobile");
+				homepage.clickOnItemType1ToBeChoosen("Mobiles");
+				homepage.clickOnItemType2ToBeChoosen("Smartphones");
 
-			log("Click on Item to be added in bag");
-			waitForPageToLoad();
-			homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
-		}
+				log("Click on Item to be added in bag");
+				waitForPageToLoad();
+				homepage.clickOnItemToBeAddedInBag("Apple iPhone 7");
+			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-	    }
+		}
 
 		log("Click on Add to bag button");
 		waitForPageToLoad();
@@ -163,25 +166,25 @@ public class TestEditScreen extends CommonSteps {
 
 		log("Click on Item to be added in bag");
 		waitForPageToLoad();
-		try{
-		if (homepage.getItemToBeAddedInBag("HDXSMART").isDisplayed()) {
-			homepage.clickOnItemToBeAddedInBag("HDXSMART");
-		} else {
-			homepage.clickOnItemToBeAddedInBag("Apple iPhone SE");
-		}
+		try {
+			if (homepage.getItemToBeAddedInBag("HDXSMART").isDisplayed()) {
+				homepage.clickOnItemToBeAddedInBag("HDXSMART");
+			} else {
+				homepage.clickOnItemToBeAddedInBag("Apple iPhone SE");
+			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-	    }
-		
+		}
+
 		log("Click on Add to bag button");
 		homepage.clickOnAddToBagButton();
 		waitForPageToLoad();
 
-		try{
-		if (homepage.getSizeOfItem("SILVER").isDisplayed()) {
-			homepage.clickOnSizeOfItem("SILVER");
-		}
+		try {
+			if (homepage.getSizeOfItem("SILVER").isDisplayed()) {
+				homepage.clickOnSizeOfItem("SILVER");
+			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-	    }
+		}
 
 		log("Click on Shopping bag edit button");
 		shoppingbagpage.clickOnShoppingBagEditButton();
@@ -197,8 +200,4 @@ public class TestEditScreen extends CommonSteps {
 				"Empty Shopping Bag message is not displayed");
 	}
 
-	@AfterMethod
-	public void closeAppiumApp() {
-		closeApp();
-	}
 }

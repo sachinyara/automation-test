@@ -20,44 +20,38 @@ public class CommonSteps extends AndroidSetup {
 
 	private static final Logger LOG = Logger.getLogger(CommonSteps.class.getName());
 
-	protected static void log(String message){
+	protected static void log(String message) {
 		LOG.info(message);
 		System.out.println(message);
 	}
-	
+
 	@Step("{0} : Verified")
-	private static void logForAssert(String message){
+	private static void logForAssert(String message) {
 		Reporter.log(message);
 		System.out.println(message);
 		LOG.info(message);
 	}
-	
-	protected static void assertTrueAllure(boolean condition, String passMessage, String failMessage){
-		if(condition){
+
+	protected static void assertTrueAllure(boolean condition, String passMessage, String failMessage) {
+		if (condition) {
 			assertTrue(true);
 			logForAssert(passMessage);
-		}else{
+		} else {
 			logForAssert(failMessage);
 			assertTrue(false);
 		}
 	}
-	
-	protected static void assertFalseAllure(boolean condition, String failMessage, String passMessage){
-		if(!condition){
+
+	protected static void assertFalseAllure(boolean condition, String failMessage, String passMessage) {
+		if (!condition) {
 			assertFalse(false);
 			logForAssert(passMessage);
-		}else{
+		} else {
 			logForAssert(failMessage);
 			assertFalse(true);
 		}
 	}
-	
-	/*protected static boolean isElementPresent(Interf interface,String funName,String parameter){
-		try{
-			interface.funName(parameter);
-		}
-	}*/
-	
+
 	protected WebElement findElement(String elementXPath) {
 		return driver.findElement(By.xpath(elementXPath));
 	}
