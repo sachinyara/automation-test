@@ -42,6 +42,7 @@ public class LoginPageImpl extends CommonSteps implements ILoginPage{
 		getLoginButton().click();
 	}
 	
+	@Step("Click on Do It Later button")
 	@Override
 	public void clickOnDoItLaterButton(){
 		getDoItLetterButton().click();

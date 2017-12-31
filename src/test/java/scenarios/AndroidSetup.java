@@ -8,11 +8,13 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.android.AndroidDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class AndroidSetup {
 
 	protected static AndroidDriver<WebElement> driver;
 
+	@Step("Setting capabilities and Opening App")
 	protected void prepareAndroidForAppium() throws MalformedURLException {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -31,9 +33,11 @@ public class AndroidSetup {
 		capabilities.setCapability("resetKeyboard", "true");
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\pathto\\my\\chromedriver.exe");
+		
 		driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 	}
 	
+	@Step("Closing App")
 	protected void closeApp(){
 		driver.quit();
 	}
