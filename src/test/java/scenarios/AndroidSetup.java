@@ -6,14 +6,16 @@ import java.net.URL;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeSuite;
 
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class AndroidSetup {
-
+	
 	protected static AndroidDriver<WebElement> driver;
 
+	@BeforeSuite
 	@Step("Setting capabilities and Opening App")
 	protected void prepareAndroidForAppium() throws MalformedURLException {
 

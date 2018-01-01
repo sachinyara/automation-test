@@ -1,5 +1,7 @@
 package pages.impl;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 
 import common.CommonSteps;
@@ -105,5 +107,23 @@ public class HomePageImpl extends CommonSteps implements IHomePage{
 	@Override
 	public void clickOnSizeOfItem(String sizeofitem){
 		getSizeOfItem(sizeofitem).click();
+	}
+	
+	@Step("Get list of elements in Recharge or Pay For section")
+	@Override
+	public List<WebElement> getRechargeOrPayForList(){
+		return findElements(RECHARGE_ORPAY_FOR_LIST);
+	}
+	
+	@Step("Swipe right to left to get all elements")
+	@Override
+	public void swipeToGetAllRechargeElements(){
+		swipeRightToLeft();
+	}
+	
+	@Step("Get row titles")
+	@Override
+	public List<WebElement> getRowsTitle(){
+		return findElements(HOME_PAGE_ROW_TITLE);
 	}
 }

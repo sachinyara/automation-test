@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 
 import pages.Locators.HomePageLocators;
@@ -39,4 +41,10 @@ public interface IHomePage extends HomePageLocators{
 	void clickOnSizeOfItem(String sizeofitem);
 
 	void waitForPageToLoad();
+
+	List<WebElement> getRechargeOrPayForList();
+
+	void swipeToGetAllRechargeElements();
+
+	List<WebElement> getRowsTitle();
 }

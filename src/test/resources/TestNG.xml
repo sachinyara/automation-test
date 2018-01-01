@@ -3,7 +3,7 @@
 <suite name="Paytm Automation">
   <test name="Shopping Bag- Edit Screen">
     <classes>
-      <class name="scenarios.TestEditScreen"/>
+      <class name="scenarios.TestHomeScreen"/>
     </classes>
   </test>
 </suite>

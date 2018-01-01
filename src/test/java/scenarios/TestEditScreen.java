@@ -5,7 +5,7 @@ import static pages.MobilePageFactory.getFactory;
 
 import java.net.MalformedURLException;
 
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -21,11 +21,6 @@ import ru.yandex.qatools.allure.annotations.Stories;
 @Listeners({ TakeScreenshot.class })
 
 public class TestEditScreen extends CommonSteps {
-
-	@BeforeMethod
-	public void androidDeviceSetup() throws MalformedURLException {
-		prepareAndroidForAppium();
-	}
 
 	/*@Features(value = { "Shopping bag" })
 	@Stories(value = { "Edit Screen" })
