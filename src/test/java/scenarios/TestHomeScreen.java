@@ -81,14 +81,14 @@ public class TestHomeScreen extends CommonSteps {
 
 		log("Validate Mobiles Best Deals section");
 		List<WebElement> listRechargeOrPayFor;
+		List<String> list=new ArrayList<>();
 		do{
 			listRechargeOrPayFor=homepage.getRowsTitle();
-			System.out.println(listRechargeOrPayFor);
 			for (WebElement eachItem : listRechargeOrPayFor) {
-				System.out.println(eachItem.getText());
+				list.add(eachItem.getText());
 			}
 			swipeBottomToTop();
-		}while(!listRechargeOrPayFor.contains("Best Deals on Mobiles"));
+		}while(!list.contains("Best Deals on Mobiles"));
 			
 	}
 }
