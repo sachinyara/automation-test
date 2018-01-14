@@ -12,7 +12,7 @@ import org.testng.annotations.Parameters;
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class AndroidSetup implements Runnable{
+public class AndroidSetup{
 	
 	protected static AndroidDriver<WebElement> driver;
 	
@@ -39,10 +39,6 @@ public class AndroidSetup implements Runnable{
 		System.setProperty("webdriver.chrome.driver", "C:\\pathto\\my\\chromedriver.exe");
 		String url= "http://0.0.0.0:"+port+"/wd/hub";
 		driver = new AndroidDriver<>(new URL(url), capabilities);
-	}
-	
-	public void run(){
-		
 	}
 	
 	@Step("Closing App")
