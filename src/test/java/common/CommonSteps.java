@@ -115,7 +115,6 @@ public class CommonSteps extends AndroidSetup {
 	}
 
 	protected void waitForPresent(String locator, int secondstowait) {
-
 		WebDriverWait wait = new WebDriverWait(driver, secondstowait);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
 	}

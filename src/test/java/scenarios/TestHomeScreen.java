@@ -89,6 +89,6 @@ public class TestHomeScreen extends CommonSteps {
 			}
 			swipeBottomToTop();
 		}while(!list.contains("Best Deals on Mobiles"));
-			
+	
 	}
 }
