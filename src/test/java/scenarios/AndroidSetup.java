@@ -27,7 +27,7 @@ public class AndroidSetup{
 		// Mandatory capabilities
 		capabilities.setCapability("deviceName", device);
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "5.1.1");
+		capabilities.setCapability("platformVersion", "4.3.3");
 
 		// Other caps
 		capabilities.setCapability("appPackage", "net.one97.paytm");
