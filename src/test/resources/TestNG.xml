@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Paytm Automation" parallel=“tests”>
+<suite name="Paytm Automation" parallel="tests">
   <test name="Shopping Bag- Edit Screen1">
-  <parameter name=“port” value=“4723”></parameter>
-  <parameter name=“device” value=“ZX1B32QGP2”></parameter>
+  <parameter name="port" value="4723"></parameter>
+  <parameter name="device" value="ZX1B32QGP2"></parameter>
     <classes>
       <class name="scenarios.TestHomeScreen"/>
     </classes>
